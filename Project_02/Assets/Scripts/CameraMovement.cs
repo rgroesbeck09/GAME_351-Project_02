@@ -18,8 +18,6 @@ public class CameraMovement : MonoBehaviour
             return;
         }
 
-        Debug.Log("Camera currently following: " + target.name);
-
         // Only use the car's left/right rotation
         Quaternion yawRotation = Quaternion.Euler(0, target.eulerAngles.y, 0);
 
@@ -39,9 +37,6 @@ public class CameraMovement : MonoBehaviour
 
     public void SetTarget(Transform newTarget)
     {
-        Debug.Log("SET TARGET CALLED");
-        Debug.Log("Old target: " + target.name);
-        Debug.Log("New target: " + newTarget.name);
         target = newTarget;
     }
 }
