@@ -562,6 +562,8 @@ MonoBehaviour:
   terrainLayer:
     serializedVersion: 2
     m_Bits: 8
+  hoverAmount: 0.05
+  hoverSpeed: 8
 --- !u!1 &1741039100
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,3 +748,5 @@ MonoBehaviour:
   terrainLayer:
     serializedVersion: 2
     m_Bits: 0
+  hoverAmount: 0.05
+  hoverSpeed: 8

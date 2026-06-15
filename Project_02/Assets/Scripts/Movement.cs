@@ -8,6 +8,16 @@ public class Movement : MonoBehaviour
     public float rayDistance = 11f;
     public float rotationSpeed = 10f;
     public LayerMask terrainLayer;
+    public float hoverAmount = 0.05f;
+    public float hoverSpeed = 8f;
+    public float hoverHeight = 8;
+
+
+    // Start is called before the first frame update
+    void Start()
+    { 
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -19,12 +29,15 @@ public class Movement : MonoBehaviour
         Terrain terrain = Terrain.activeTerrain;
 
         Vector3 position = transform.position;
-        
+
         // get the active terrain values
-        float terrainH = terrain.SampleHeight(position);
+        float terrainH = terrain.SampleHeight(position) + hoverHeight;
+
+        // Implementation of Hover
+        position.y = terrainH + Mathf.Sin(Time.time * hoverSpeed) * hoverAmount;
 
         // set the game object's translation (not an increment)
-        transform.position = new Vector3(position.x, terrainH + 10, position.z);
+        transform.position = new Vector3(position.x, position.y, position.z);
 
         // Set the allignment with the terrain
         AlignWithTerrain();
