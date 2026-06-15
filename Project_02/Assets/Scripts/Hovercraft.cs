@@ -33,7 +33,7 @@ public class Hovercraft : MonoBehaviour
     // shoot laser from average craft by pressing space
         if(type == craft_type.average)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 Debug.Log("Laser Fired!");
                 laser_shot();
