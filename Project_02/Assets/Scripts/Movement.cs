@@ -11,12 +11,15 @@ public class Movement : MonoBehaviour
     public float hoverAmount = 0.05f;
     public float hoverSpeed = 8f;
     public float hoverHeight = 8;
+    public CameraMovement changeCam;
+    public Transform nextObj;
+    public float hoverCarSpeed;
 
 
     // Start is called before the first frame update
     void Start()
-    { 
-        
+    {
+        changeCam = Camera.main.GetComponent<CameraMovement>();
     }
 
     // Update is called once per frame
@@ -41,17 +44,16 @@ public class Movement : MonoBehaviour
 
         // Set the allignment with the terrain
         AlignWithTerrain();
-        Debug.Log(transform.rotation.eulerAngles);
 
         // Forward and back
         if (Input.GetKey (KeyCode.W))
         {
             // increment the game object's translation
-            transform.Translate(0, 0, 0.1f);
+            transform.Translate(0, 0, hoverCarSpeed);
         }
         else if(Input.GetKey (KeyCode.S))
         {
-            transform.Translate(0, 0, -0.1f);
+            transform.Translate(0, 0, -hoverCarSpeed);
         }
 
         // Rotational
@@ -65,10 +67,17 @@ public class Movement : MonoBehaviour
             transform.Rotate(0, 0.1f, 0);
         }
 
-        if (Input.GetKey(KeyCode.C))
-        { 
-            // Toggle the car types
+        if (Input.GetKeyUp (KeyCode.C))
+        {
+            Debug.Log("Pressed C on: " + gameObject.name);
 
+            changeCam = FindObjectOfType<CameraMovement>();
+
+            Debug.Log("CameraMovement found on: " + changeCam.gameObject.name);
+            Debug.Log("Trying to switch to: " + nextObj.name);
+
+            // Toggle the cars
+            changeCam.SetTarget(nextObj);
         }
 
     }

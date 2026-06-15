@@ -23,8 +23,6 @@ public class Hovercraft : MonoBehaviour
 {
     // Hoverecraft Variables
     public craft_type type = craft_type.average;
-    public float speed;
-    public float turn_speed;
     public GameObject laserPrefab;
     public Transform shootPoint_01;
     public Transform shootPoint_02;
@@ -41,14 +39,6 @@ public class Hovercraft : MonoBehaviour
                 laser_shot();
             }
         }
-    }
-
-    // TODO: Create a function to change the car type
-    //        things to remember when changing the car type
-    //        need to change speed, cornering as well as the type
-    public void Change_Car_Type()
-    { 
-    
     }
 
     // TODO: Lazers

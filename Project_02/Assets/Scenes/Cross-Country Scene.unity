@@ -586,6 +586,9 @@ MonoBehaviour:
   hoverAmount: 0.05
   hoverSpeed: 8
   hoverHeight: 8
+  changeCam: {fileID: 1741039102}
+  nextObj: {fileID: 1352706906}
+  hoverCarSpeed: 0.2
 --- !u!114 &999517582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,8 +602,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  speed: 0
-  turn_speed: 0
   laserPrefab: {fileID: 3953049609017800414, guid: 9f58df11f0829364cb4680da967f7c3f, type: 3}
   shootPoint_01: {fileID: 1649506369}
   shootPoint_02: {fileID: 1478949955}
@@ -653,7 +654,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352706905}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b397197f015549b4f9a0bae7b7f2f5e5, type: 3}
   m_Name: 
@@ -666,6 +667,9 @@ MonoBehaviour:
   hoverAmount: 0.05
   hoverSpeed: 8
   hoverHeight: 8
+  changeCam: {fileID: 1741039102}
+  nextObj: {fileID: 1522369322}
+  hoverCarSpeed: 0.1
 --- !u!114 &1352706908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,8 +683,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  speed: 0
-  turn_speed: 0
   laserPrefab: {fileID: 0}
   shootPoint_01: {fileID: 0}
   shootPoint_02: {fileID: 0}
@@ -817,15 +819,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4401185589141230, guid: 5d68a55fb8691f74dbda8f0e7d28977e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.85
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4401185589141230, guid: 5d68a55fb8691f74dbda8f0e7d28977e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.85
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4401185589141230, guid: 5d68a55fb8691f74dbda8f0e7d28977e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.85
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4401185589141230, guid: 5d68a55fb8691f74dbda8f0e7d28977e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -881,7 +883,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217916344}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b397197f015549b4f9a0bae7b7f2f5e5, type: 3}
   m_Name: 
@@ -894,6 +896,9 @@ MonoBehaviour:
   hoverAmount: 0.05
   hoverSpeed: 8
   hoverHeight: 8
+  changeCam: {fileID: 1741039102}
+  nextObj: {fileID: 999517580}
+  hoverCarSpeed: 0.3
 --- !u!114 &1522369328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -906,9 +911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4121b7fb7080854d8abff91d102b04d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  speed: 0
-  turn_speed: 0
+  type: 1
   laserPrefab: {fileID: 0}
   shootPoint_01: {fileID: 0}
   shootPoint_02: {fileID: 0}
@@ -958,7 +961,7 @@ GameObject:
   - component: {fileID: 1741039102}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: Player
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

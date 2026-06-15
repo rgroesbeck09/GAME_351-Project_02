@@ -12,6 +12,14 @@ public class CameraMovement : MonoBehaviour
     // 
     void LateUpdate()
     {
+        if (target == null)
+        {
+            Debug.LogWarning("CameraMovement target is null");
+            return;
+        }
+
+        Debug.Log("Camera currently following: " + target.name);
+
         // Only use the car's left/right rotation
         Quaternion yawRotation = Quaternion.Euler(0, target.eulerAngles.y, 0);
 
@@ -19,7 +27,7 @@ public class CameraMovement : MonoBehaviour
         Vector3 desiredPosition = target.position + yawRotation * offset;
 
         // sets the position of the camera
-        transform.position = Vector3.Slerp(
+        transform.position = Vector3.Lerp(
             transform.position,
             desiredPosition,
             smoothSpeed * Time.deltaTime
@@ -27,5 +35,13 @@ public class CameraMovement : MonoBehaviour
 
         // Look at the car but keep camera upright
         transform.LookAt(target.position + Vector3.up * 2f);
+    }
+
+    public void SetTarget(Transform newTarget)
+    {
+        Debug.Log("SET TARGET CALLED");
+        Debug.Log("Old target: " + target.name);
+        Debug.Log("New target: " + newTarget.name);
+        target = newTarget;
     }
 }
