@@ -65,6 +65,12 @@ public class Movement : MonoBehaviour
             transform.Rotate(0, 0.1f, 0);
         }
 
+        if (Input.GetKey(KeyCode.C))
+        { 
+            // Toggle the car types
+
+        }
+
     }
 
     // this function is used to allign the object with the terrain
@@ -75,7 +81,6 @@ public class Movement : MonoBehaviour
 
         if(Physics.Raycast(ray, out RaycastHit hit, rayDistance, terrainLayer))
         {
-            Debug.Log("Object Hit: " + hit.collider.name);
             Vector3 terrainNormal = hit.normal;
 
             // This is used to keep direction of object

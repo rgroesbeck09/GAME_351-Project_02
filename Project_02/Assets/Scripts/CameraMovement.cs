@@ -6,7 +6,7 @@ public class CameraMovement : MonoBehaviour
 {
     // Public Variables
     public Transform target;
-    public Vector3 offset = new Vector3(0, 5, -10);
+    public Vector3 offset = new Vector3(0, 10, -20);
     public float smoothSpeed = 5f;
 
     // 
@@ -19,7 +19,7 @@ public class CameraMovement : MonoBehaviour
         Vector3 desiredPosition = target.position + yawRotation * offset;
 
         // sets the position of the camera
-        transform.position = Vector3.Lerp(
+        transform.position = Vector3.Slerp(
             transform.position,
             desiredPosition,
             smoothSpeed * Time.deltaTime
@@ -28,6 +28,4 @@ public class CameraMovement : MonoBehaviour
         // Look at the car but keep camera upright
         transform.LookAt(target.position + Vector3.up * 2f);
     }
-
-    
 }
