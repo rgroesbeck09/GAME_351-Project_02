@@ -589,6 +589,9 @@ MonoBehaviour:
   changeCam: {fileID: 1741039102}
   nextObj: {fileID: 1352706906}
   hoverCarSpeed: 0.2
+  hoverCarTurner: 0.1
+  nextCar: {fileID: 1352706907}
+  pastCar: {fileID: 1522369325}
 --- !u!114 &999517582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,7 +657,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352706905}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b397197f015549b4f9a0bae7b7f2f5e5, type: 3}
   m_Name: 
@@ -670,6 +673,9 @@ MonoBehaviour:
   changeCam: {fileID: 1741039102}
   nextObj: {fileID: 1522369322}
   hoverCarSpeed: 0.1
+  hoverCarTurner: 0.2
+  nextCar: {fileID: 1522369325}
+  pastCar: {fileID: 999517581}
 --- !u!114 &1352706908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,7 +837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4401185589141230, guid: 5d68a55fb8691f74dbda8f0e7d28977e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -55.4
       objectReference: {fileID: 0}
     - target: {fileID: 4401185589141230, guid: 5d68a55fb8691f74dbda8f0e7d28977e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -883,7 +889,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217916344}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b397197f015549b4f9a0bae7b7f2f5e5, type: 3}
   m_Name: 
@@ -899,6 +905,9 @@ MonoBehaviour:
   changeCam: {fileID: 1741039102}
   nextObj: {fileID: 999517580}
   hoverCarSpeed: 0.3
+  hoverCarTurner: 0.1
+  nextCar: {fileID: 999517581}
+  pastCar: {fileID: 1352706907}
 --- !u!114 &1522369328
 MonoBehaviour:
   m_ObjectHideFlags: 0

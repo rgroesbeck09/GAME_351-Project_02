@@ -14,6 +14,9 @@ public class Movement : MonoBehaviour
     public CameraMovement changeCam;
     public Transform nextObj;
     public float hoverCarSpeed;
+    public float hoverCarTurner = 0.1f;
+    public Movement nextCar;
+    public Movement pastCar;
 
 
     // Start is called before the first frame update
@@ -25,7 +28,9 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Set the previous car to disable
+        pastCar.enabled = false;
+
         // Hint: The global static variable "Terrain.activeTerrain" 
         // may be helpful or have useful methods for user here or in
         // other scripts.
@@ -60,11 +65,11 @@ public class Movement : MonoBehaviour
         if (Input.GetKey (KeyCode.A))
         {
             // increment the game object's translation
-            transform.Rotate(0, -0.1f, 0);
+            transform.Rotate(0, -hoverCarTurner, 0);
         }
         else if(Input.GetKey (KeyCode.D))
         {
-            transform.Rotate(0, 0.1f, 0);
+            transform.Rotate(0, hoverCarTurner, 0);
         }
 
         if (Input.GetKeyUp (KeyCode.C))
@@ -78,6 +83,7 @@ public class Movement : MonoBehaviour
 
             // Toggle the cars
             changeCam.SetTarget(nextObj);
+            nextCar.enabled = true;
         }
 
     }
